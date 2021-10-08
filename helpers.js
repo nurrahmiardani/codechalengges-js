@@ -4,10 +4,18 @@ export const getPosts = async () => {
   
   export const getPost = async (post_id) => {
     // EDIT HERE
+    if (post_id !== undefined){
+      getRandomPic()
+      getRandomProfile()
+      getPostComments()
+      getAuthor()
+    } else{
+      console.log('menyerah')
+    }
   };
   
   export const getPostComments = async (post_id) => {
-    // EDIT HERE
+    // EDIT HERE 
   };
   
   export const getAuthor = async (user_id) => {
