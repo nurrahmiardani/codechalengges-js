@@ -38,7 +38,18 @@ const createPostElement = (thumbnail, post) => {
 };
 
 const renderPosts = async () => {
-  // EDIT HERE
+  let Posts = await getPosts();
+  console.log(Posts);
+  let dataPosts = Posts.results;
+  let html = '';
+  Array.from(Posts).forEach(Posts => {
+  let htmlRender =
+ 
+  html += htmlRender;
+  });
+
+  let container = document.querySelector('.container');
+  container.innerHTML = html;
 };
 
 renderPosts();
