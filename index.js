@@ -33,15 +33,21 @@ const createPostElement = (thumbnail, post) => {
   elCol.appendChild(elCard);
 
   // EDIT HERE
+  elCardTitle.innerHTML = post.title
+  elCardImg.setAttribute('src', thumbnail)
+  elCardBtn.setAttribute('href', `/post.html?post_id=${post.id}`)
 
   return elCol;
 };
 
 const renderPosts = async () => {
   // EDIT HERE
-  fetch('https://jsonplaceholder.typicode.com/todos/1')
-  .then(response => response.json())
-  .then(json => console.log(json))
+  let posts = await getPosts()
+  posts.map(async (value) => {
+    let pic = await getRandomPic()
+    elDaftarBerita.appendChild(createPostElement(pic, value))
+  })
+  
 };
 
 renderPosts();

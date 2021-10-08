@@ -1,9 +1,9 @@
 export const getPosts = async () => {
     // EDIT HERE
-    let data = await fetch("https://jsonplaceholder.typicode.com/todos/1");
-    let response = await data.json();
-  
-    console.log(response);
+    const url = "https://jsonplaceholder.typicode.com/posts?_start=0&_limit=16"
+    let response = await fetch(url)
+    let data = await response.json()
+    return data
   };
   
   
