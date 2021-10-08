@@ -9,13 +9,21 @@ export const getPosts = async () => {
   
   export const getPost = async (post_id) => {
     // EDIT HERE
-    if (post_id !== undefined){
-      getRandomPic()
-      getRandomProfile()
-      getPostComments()
-      getAuthor()
-    } else{
-      console.log('menyerah')
+    // if (post_id !== undefined){
+    //   getRandomPic()
+    //   getRandomProfile()
+    //   getPostComments()
+    //   getAuthor()
+    // } else{
+    //   console.log('menyerah')
+    // }
+    try {
+      const url = `https://jsonplaceholder.typicode.com/posts/${post_id}`
+      let response = await fetch(url)
+      let data = await response.json()
+      return data
+    } catch(error) {
+      throw error
     }
   };
   
@@ -52,3 +60,4 @@ export const getPosts = async () => {
   };
 
   getPosts();
+  getPost()
