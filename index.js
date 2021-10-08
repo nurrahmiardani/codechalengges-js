@@ -39,6 +39,9 @@ const createPostElement = (thumbnail, post) => {
 
 const renderPosts = async () => {
   // EDIT HERE
+  fetch('https://jsonplaceholder.typicode.com/todos/1')
+  .then(response => response.json())
+  .then(json => console.log(json))
 };
 
 renderPosts();

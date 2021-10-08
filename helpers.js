@@ -1,6 +1,11 @@
 export const getPosts = async () => {
     // EDIT HERE
+    let data = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+    let response = await data.json();
+  
+    console.log(response);
   };
+  
   
   export const getPost = async (post_id) => {
     // EDIT HERE
@@ -45,3 +50,5 @@ export const getPosts = async () => {
       throw error;
     }
   };
+
+  getPosts();
